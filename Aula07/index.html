@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="titulo">Javascript</h1> 
+    <p class="texto">Javascript ablableble</p>
+    <p class="texto">Javascript ablublublu</p>
+    <ul>
+        <li name ="item">Função</li>
+        <li name ="item">Array</li>
+        <li name ="item">Objeto</li>
+        <a id="link" href= "https://taylorswift.com"> saiba mais</a>
+    </ul>
+    <script>
+       //const titulo = document.getElementById("titulo");
+       //const titulo = document.querySelector("#titulo");
+       //const paragrafo = document.querySelector(".texto");
+       //const itens = document.querySelectorAll("li");
+       //const itensName = document.querySelectorAll("[name = 'item']");
+       //const paragrafo = document.getElementsByTagName("p");
+
+    // const paragrafo = document.getElementsByClassName("texto");
+
+     //for(let paragrafo of paragrafos){
+     //   console.log(paragrafo);
+    // }
+
+   // const tagLink = document.getElementById("link");
+    //let link = tagLink.getAttribute("href");
+   // tagLink.setAttribute("href", "#");
+   // tagLink.removeAttribute("href");
+    // let temHref = tagLink.hasAttribute("href");
+   // console.log(temHref)
+
+   const itens = document.querySelectorAll("li");
+
+  // itens.forEach(item => {
+  //  item.style="color:red; font-size: 28px"
+   //})
+
+   const paragrafos = document.querySelectorAll(".texto");
+
+   paragrafos.forEach(paragrafo => {
+    console.log(paragrafo.classList);
+   });
+
+   itens.forEach(item => {
+    item.classList.add("item");
+    /*(ou .remove)*/
+   })
+    </script>
+</body>
+</html>
