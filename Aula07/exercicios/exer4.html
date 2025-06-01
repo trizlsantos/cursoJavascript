@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 4</title>
+</head>
+<body>
+    <a id="meuLink">Clique aqui para saber mais</a>
+    <br><br>
+    <button onclick="definirLink()">Definir Link</button>
+
+    <script>
+        function definirLink() {
+            let link = document.getElementById("meuLink");
+            link.setAttribute("href", "https://www.example.com");
+            link.setAttribute("target", "_blank");
+        }
+    </script>
+</body>
+</html>

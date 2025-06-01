@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 5</title>
+</head>
+<body>
+    <p id="texto">Use os botões para adicionar e remover o destaque do texto.</p>
+    <button onclick="destacarTexto()">Adicionar</button>
+    <button onclick="removerDestaque()">Remover</button>
+
+    <script>
+        function destacarTexto() {
+            document.getElementById("texto").classList.add("destaque");
+        }
+
+        function removerDestaque() {
+            document.getElementById("texto").classList.remove("destaque");
+        }
+    </script>
+</body>
+</html>
