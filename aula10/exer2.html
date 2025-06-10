@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro de Livros</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+      padding: 40px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    .formulario {
+      background-color: #ecf0f1;
+      padding: 20px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    input, select {
+      padding: 10px;
+      border: 1px solid #bdc3c7;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    .livros {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .livro {
+      background-color: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      width: 220px;
+    }
+
+    .livro img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    .livro h3 {
+      margin: 0;
+      color: #2c3e50;
+    }
+
+    .livro p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Cadastro de Livros</h1>
+
+  <div class="formulario">
+    <input type="text" id="titulo" placeholder="Título do livro">
+    <input type="text" id="autor" placeholder="Autor">
+    <input type="number" id="ano" placeholder="Ano de publicação">
+    <select id="genero">
+      <option value="">Selecione o gênero</option>
+      <option>Ficção</option>
+      <option>Não-ficção</option>
+      <option>Romance</option>
+      <option>Terror</option>
+      <option>Aventura</option>
+    </select>
+    <input type="url" id="imagem" placeholder="URL da imagem da capa">
+    <button id="btn-add">Adicionar Livro</button>
+  </div>
+
+  <div class="livros" id="listaLivros"></div>
+
+  <script>
+    document.getElementById("btn-add").addEventListener("click", function () {
+      const titulo = document.getElementById("titulo").value.trim();
+      const autor = document.getElementById("autor").value.trim();
+      const ano = document.getElementById("ano").value.trim();
+      const genero = document.getElementById("genero").value;
+      const imagem = document.getElementById("imagem").value.trim();
+      const listaLivros = document.getElementById("listaLivros");
+
+      if (titulo === "" || autor === "" || ano === "" || genero === "" || imagem === "") {
+        alert("Todos os campos devem ser preenchidos!");
+        return;
+      }
+
+      const livro = document.createElement("div");
+      livro.classList.add("livro");
+
+      const img = document.createElement("img");
+      img.src = imagem;
+      img.alt = `Capa do livro ${titulo}`;
+
+      const tituloElemento = document.createElement("h3");
+      tituloElemento.textContent = titulo;
+
+      const autorElemento = document.createElement("p");
+      autorElemento.textContent = `Autor: ${autor}`;
+
+      const anoElemento = document.createElement("p");
+      anoElemento.textContent = `Ano: ${ano}`;
+
+      const generoElemento = document.createElement("p");
+      generoElemento.textContent = `Gênero: ${genero}`;
+
+      livro.appendChild(img);
+      livro.appendChild(tituloElemento);
+      livro.appendChild(autorElemento);
+      livro.appendChild(anoElemento);
+      livro.appendChild(generoElemento);
+
+      listaLivros.appendChild(livro);
+
+      document.getElementById("titulo").value = "";
+      document.getElementById("autor").value = "";
+      document.getElementById("ano").value = "";
+      document.getElementById("genero").value = "";
+      document.getElementById("imagem").value = "";
+    });
+  </script>
+
+</body>
+</html>
